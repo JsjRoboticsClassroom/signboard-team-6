@@ -16,7 +16,7 @@ public class Main {
         for (int i = 0; i < numCycles; ++i) {
             SignBoard.Frame frame = board.newFrame();
 
-            for (int x = -2; x < width; ++x) {
+            for (int x = 2; x < width; ++x) {
                 int y = (2 * height - 2 + x + i) % (2 * height - 2);
                 if (y >= height)
                     y = 2 * height - y - 2;
@@ -45,7 +45,7 @@ public class Main {
      * @param text
      *   The text to scroll.
      */
-    public static void scrollTextScene(SignBoard board, String text) {
+    public static void scrollBeerTextScene(SignBoard board, String text) {
         int width = board.getWidth();
         int y = board.getHeight() / 2;
         for (int x = -text.length(); x <= width; ++x) {
@@ -75,7 +75,7 @@ public class Main {
      * @param cycles
      *   The number of cycles to draw for.
      */
-    public static void flashFreshHotScene(SignBoard board, int cycles) {
+    public static void flashColdBeerScene(SignBoard board, int cycles) {
         Random random = new Random();
         int width = board.getWidth();
         int leftPosition = width / 4 - 12;
@@ -97,33 +97,42 @@ public class Main {
                 frame.setYellow();
             // Write a word.
             if (i % 2 == 0) {
-                frame.write(leftPosition, y - 2, "CCCC OOOO L    DDD  ");
-                frame.write(leftPosition, y - 1, "C    O  O L    D  D ");
-                frame.write(leftPosition, y    , "C    O  O L    D  D ");
-                frame.write(leftPosition, y + 1, "C    O  O L    D  D ");
-                frame.write(leftPosition, y + 2, "CCCC OOOO LLLL DDD  ");
+                frame.write(leftPosition, y - 3, "                                      OoOoOOoOooO   ");
+                frame.write(leftPosition, y - 2, "               CCCC OOOO L    DDD    (_o__o____o_)  ");
+                frame.write(leftPosition, y - 1, "               C    O  O L    D  D   o| |_| |_| |DD ");
+                frame.write(leftPosition, y    , "               C    O  O L    D  D  oo| |_| |_| | DD");
+                frame.write(leftPosition, y + 1, "               C    O  O L    D  D  oo| |_| |_| | DD");
+                frame.write(leftPosition, y + 2, "               CCCC OOOO LLLL DDD   oo|_|_|_|_|_|DD ");
+                frame.write(leftPosition, y + 3, "                                   ooo|_|_|_|_|_|   ");
+
+            } else {
+                frame.write(leftPosition, y - 3, "                                      ooooooooooo   ");
+                frame.write(leftPosition, y - 2, "               BBBB EEEE EEEE RRR    (_o__o____o_)  ");
+                frame.write(leftPosition, y - 1, "               B  B E    E    R  R    | |_| |_| |DD ");
+                frame.write(leftPosition, y    , "               BBB  EEE  EEE  RRR     | |_| |_| | DD");
+                frame.write(leftPosition, y + 1, "               B  B E    E    R  R    | |_| |_| | DD");
+                frame.write(leftPosition, y + 2, "               BBBB EEEE EEEE R  R    |_|_|_|_|_|DD ");
+                frame.write(leftPosition, y + 3, "                                      |_|_|_|_|_|   ");
             }
-            else {
-                frame.write(rightPosition, y - 2, "BBBB EEEE EEEE RRR  ");
-                frame.write(rightPosition, y - 1, "B  B E    E    R  R ");
-                frame.write(rightPosition, y    , "BBB  EEE  EEE  RRR   ");
-                frame.write(rightPosition, y + 1, "B  B E    E    R  R ");
-                frame.write(rightPosition, y + 2, "BBBB EEEE EEEE R  R ");
-            }
+
+
+
 
             frame.finish(0.25);
         }
     }
+
+
 
     public static void main(String[] args) {
         SignBoard signBoard = new SignBoard(8);
 
         // Run the sign board forever.
         while (true) {
-            ribbonScene(signBoard, 48);
-            scrollTextScene(signBoard, "###  B E E R A N D T A C O S  ###");
-            ribbonScene(signBoard, 48);
-            flashFreshHotScene(signBoard, 8);
+            //ribbonScene(signBoard, 48);
+            scrollBeerTextScene(signBoard, "!!!  W E  H A V E  B E E R  !!!");
+            //ribbonScene(signBoard, 48);
+            flashColdBeerScene(signBoard, 10);
         }
     }
 }
