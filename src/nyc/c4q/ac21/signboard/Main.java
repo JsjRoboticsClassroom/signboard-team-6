@@ -97,18 +97,18 @@ public class Main {
                 frame.setYellow();
             // Write a word.
             if (i % 2 == 0) {
-                frame.write(leftPosition, y - 2, "FFFF RRR  EEEE  SSS H  H");
-                frame.write(leftPosition, y - 1, "F    R RR E    SS   H  H");
-                frame.write(leftPosition, y    , "FFR  RRR  EEE   SS  HHHH");
-                frame.write(leftPosition, y + 1, "F    R R  E      SS H  H");
-                frame.write(leftPosition, y + 2, "F    R  R EEEE SSS  H  H");
+                frame.write(leftPosition, y - 2, "| |  | |   _ _ _ ___    _ _ _ _     ");
+                frame.write(leftPosition, y - 1, "| |__| |  |_ _ _  | |  |_ _ _ _ |     ");
+                frame.write(leftPosition, y    , "| |__  |  | |     | |      | |        ");
+                frame.write(leftPosition, y + 1, "| |  | |  | |     | |      | |      ");
+                frame.write(leftPosition, y + 2, "| |  | |  | | _ _ |_|      |_|      ");
             }
             else {
-                frame.write(rightPosition, y - 2, "H  H  OO  TTTT");
-                frame.write(rightPosition, y - 1, "H  H O  O  TT ");
-                frame.write(rightPosition, y    , "HHHH O  O  TT ");
-                frame.write(rightPosition, y + 1, "H  H O  O  TT ");
-                frame.write(rightPosition, y + 2, "H  H  OO   TT ");
+                frame.write(rightPosition, y - 2, "  _ _ _       _ _ _    _ _ _ _  "); 
+                frame.write(rightPosition, y - 1, " |_ _ _| /    |_ _ _| |  _ _  | "); 
+                frame.write(rightPosition, y, "       | |  //\\  ||      | |   | | "); 
+                frame.write(rightPosition, y + 1, "   | | //--\\ ||_ __  | |_ _| |  "); 
+                frame.write(rightPosition, y + 2, "   |_|//    \\|_ _ _| |_ _ _ _|   ");
             }
 
             frame.finish(0.25);
@@ -121,9 +121,14 @@ public class Main {
         // Run the sign board forever.
         while (true) {
             ribbonScene(signBoard, 48);
-            scrollTextScene(signBoard, "###  F A L A F E L  ###");
-            ribbonScene(signBoard, 48);
+            scrollTextScene(signBoard,
+                    "TACOS\n" +
+                    "            \\Beans//  \n" +
+                    "           \\Peppers//  \n" +
+                    "           \\Avocado//     ");
+
             flashFreshHotScene(signBoard, 8);
         }
-    }
+
+   }
 }
