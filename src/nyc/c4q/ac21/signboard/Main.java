@@ -97,18 +97,18 @@ public class Main {
                 frame.setYellow();
             // Write a word.
             if (i % 2 == 0) {
-                frame.write(leftPosition, y - 2, "FFFF RRR  EEEE  SSS H  H");
-                frame.write(leftPosition, y - 1, "F    R RR E    SS   H  H");
-                frame.write(leftPosition, y    , "FFR  RRR  EEE   SS  HHHH");
-                frame.write(leftPosition, y + 1, "F    R R  E      SS H  H");
-                frame.write(leftPosition, y + 2, "F    R  R EEEE SSS  H  H");
+                frame.write(leftPosition, y - 2, "CCCC OOOO L    DDD  ");
+                frame.write(leftPosition, y - 1, "C    O  O L    D  D ");
+                frame.write(leftPosition, y    , "C    O  O L    D  D ");
+                frame.write(leftPosition, y + 1, "C    O  O L    D  D ");
+                frame.write(leftPosition, y + 2, "CCCC OOOO LLLL DDD  ");
             }
             else {
-                frame.write(rightPosition, y - 2, "H  H  OO  TTTT");
-                frame.write(rightPosition, y - 1, "H  H O  O  TT ");
-                frame.write(rightPosition, y    , "HHHH O  O  TT ");
-                frame.write(rightPosition, y + 1, "H  H O  O  TT ");
-                frame.write(rightPosition, y + 2, "H  H  OO   TT ");
+                frame.write(rightPosition, y - 2, "BBBB EEEE EEEE RRR  ");
+                frame.write(rightPosition, y - 1, "B  B E    E    R  R ");
+                frame.write(rightPosition, y    , "BBB  EEE  EEE  RRR   ");
+                frame.write(rightPosition, y + 1, "B  B E    E    R  R ");
+                frame.write(rightPosition, y + 2, "BBBB EEEE EEEE R  R ");
             }
 
             frame.finish(0.25);
@@ -121,7 +121,7 @@ public class Main {
         // Run the sign board forever.
         while (true) {
             ribbonScene(signBoard, 48);
-            scrollTextScene(signBoard, "###  F A L A F E L  ###");
+            scrollTextScene(signBoard, "###  B E E R A N D T A C O S  ###");
             ribbonScene(signBoard, 48);
             flashFreshHotScene(signBoard, 8);
         }
