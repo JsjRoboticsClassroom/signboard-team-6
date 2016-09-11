@@ -122,10 +122,10 @@ public class SignBoard {
             if (finished)
                 throw new RuntimeException("frame is finished");
 
-            if (!(x >= 0 && x + text.length() <= numCols))
-                throw new IllegalArgumentException("x = " + x);
-            if (!(y >= 0 && y < height))
-                throw new IllegalArgumentException("y = " + y);
+//            if (!(x >= 0 && x + text.length() <= numCols))
+//                throw new IllegalArgumentException("x = " + x);
+//            if (!(y >= 0 && y < height))
+//                throw new IllegalArgumentException("y = " + y);
 
             terminal.moveTo(y + yOffset, x + xOffset);
             terminal.write(text);
