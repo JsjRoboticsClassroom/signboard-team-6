@@ -104,11 +104,11 @@ public class Main {
                 frame.write(leftPosition, y + 2, "| |  | |  | | _ _ |_|      |_|      ");
             }
             else {
-                frame.write(rightPosition, y - 2, "  _ _ _       _ _ _    _ _ _ _  "); 
-                frame.write(rightPosition, y - 1, " |_ _ _| /    |_ _ _| |  _ _  | "); 
-                frame.write(rightPosition, y, "       | |  //\\  ||      | |   | | "); 
-                frame.write(rightPosition, y + 1, "   | | //--\\ ||_ __  | |_ _| |  "); 
-                frame.write(rightPosition, y + 2, "   |_|//    \\|_ _ _| |_ _ _ _|   ");
+                frame.write(rightPosition, y - 2, "TTT AAA CCC OOO SSS");
+                frame.write(rightPosition, y - 1, "TTT AAA CCC OOO SSS");
+                frame.write(rightPosition, y    , "TTT AAA CCC OOO SSS");
+                frame.write(rightPosition, y + 1, "TTT AAA CCC OOO SSS");
+                frame.write(rightPosition, y + 2, "TTT AAA CCC OOO SSS");
             }
 
             frame.finish(0.25);
@@ -122,10 +122,10 @@ public class Main {
         while (true) {
             ribbonScene(signBoard, 48);
             scrollTextScene(signBoard,
-                    "TACOS\n" +
-                    "            \\Beans//  \n" +
-                    "           \\Peppers//  \n" +
-                    "           \\Avocado//     ");
+                    "TTT AAA CC OOO SS\n" +
+                    "            BEANS  \n" +
+                    "           PEPPERS \n" +
+                    "           AVOCADO     ");
 
             flashFreshHotScene(signBoard, 8);
         }
